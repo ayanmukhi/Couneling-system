@@ -1,0 +1,77 @@
+<div class="panel">
+    <div class="col-md-3 col-xd-3 left">
+      <mat-action-list>
+        <button class=""  style="margin-bottom:10px;height: 11%;color: white;" mat-list-item (click)="details('personal')"> Personal </button>
+        <button class=""  style="margin-bottom:10px;height: 11%;color: white;" mat-list-item (click)="details('all-bookings')"> All Bookings </button>
+      </mat-action-list>
+    </div>
+    <div class="col-md-9 col-xd-3 right" *ngIf="profile">
+      <mat-action-list>
+        <div *ngIf="personalDetails" class="details right-details row ">
+          <div class="col-md-6">
+            <mat-card class="example-card">
+              <img *ngIf="seekerDetails.data.image; else elseBlock" class="profile-image" mat-card-image src={{seekerDetails.data.image}}>
+              <ng-template #elseBlock>
+                <img mat-card-image class="profile-image"  class="profile-image" src="../../assets/images/user no image/noPhotoAvailable.jpg">
+              </ng-template>
+            </mat-card>
+          </div>
+          <div class="col" >
+            <div style="display: grid;">
+              <label class=" contact-design" ><b class="personalData"> NAME : </b>{{seekerDetails.data.name | titlecase}}</label>
+              <label class=" contact-design" ><b class="personalData"> GENDER : </b>{{seekerDetails.data.gender | titlecase}}</label>
+              <label class=" contact-design" ><b class="personalData"> DOB : </b>{{seekerDetails.data.dob | date:'fullDate'}}</label>
+              <label class=" contact-design" ><b class="personalData"> EMAIL : </b>{{seekerDetails.data.username }}</label>
+              <div *ngIf="seekerDetails.data.contact" style="display: grid;">
+                <label class=" " >STREET NAME : {{seekerDetails.data.contact.streetName | titlecase}}</label>
+                <label class=" ">STATE : {{ seekerDetails.data.contact.state | titlecase }}</label>
+                <label class=" " >DISTRICT : {{ seekerDetails.data.contact.district | titlecase }}</label>
+                <label class=" " >PIN : {{ seekerDetails.data.contact.pin | titlecase }}</label>
+                <label class=" " >PHONE  : {{ seekerDetails.data.contact.phone | titlecase }}</label>
+              </div>
+            </div> 
+          </div> 
+          <div class="profile-btn-container">
+            <button  class="btn profile-btn" (click)="dialogOpen()">UPDATE DETAILS</button>
+            <button  class="btn profile-btn" (click)="deleteAccount()"  >DELETE ACCOUNT</button>
+          </div>
+        </div>  
+        <div *ngIf="bookingsDetails" class="details right-details row">
+          <div class="col-md-5">
+            <strong >APPOINTMENT DATES</strong> 
+            <div class="table-responsive ">
+              <table class="table table-hover table-sm">
+                <tbody>
+                  <tr *ngFor="let booking of seekerDetails.data.bookings" (click)="appointmentDetails(booking.Rating, booking.AvailabilityId, booking.BookingId)">
+                    <td>{{booking.Date}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col booking-dates">
+            <strong  ><u>APPOINTMENT DETAILS</u></strong> 
+            
+              
+            
+            <div *ngIf="counselorFetch" class="appointment-tab" >
+              <star-rating [value]=stars totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+              <img  class="img-fluid seeker-image" *ngIf="contactDetails.data.clientImage; else elseBlock" src={{contactDetails.data.clientImage}} >
+              <ng-template #elseBlock>
+                  <img class="img-fluid seeker-image" src="../../assets/images/user no image/noPhotoAvailable.jpg">
+              </ng-template>
+              <div class="appointment-details">
+                <small ><b class="client-details" >CLIENT NAME : </b>{{contactDetails.data.clientName | titlecase}}</small><br>
+                <small ><b class="client-details" >CLIENT GENDER : </b>{{contactDetails.data.clientGender | titlecase}}</small><br>
+                <small ><b class="client-details" >CLIENT EMAIL : </b>{{contactDetails.data.clientEmail | titlecase}}</small><br>
+                <small ><b class="client-details" >CLIENT PHONE NUMBER : </b>{{contactDetails.data.clientPhone | titlecase}}</small><br>
+                <small ><b class="client-details" >COUNSELING TYPE : </b>{{contactDetails.data.clientType | titlecase}}</small><br>
+                <small ><b class="client-details" >COUNSELING LOCATION : </b>{{contactDetails.data.clientLocation | titlecase}}</small><br>
+                <small ><b class="client-details" >COUNSELING TIME : </b>{{contactDetails.data.clientTime | uppercase}}</small><br>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </mat-action-list>
+    </div>
+</div>

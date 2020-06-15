@@ -1,0 +1,14 @@
+<div class="panel">
+        <mat-accordion>
+                <div *ngFor="let faq of faqs " class="faq-set">
+                        <mat-expansion-panel  (opened)="faq.panelOpenState = true"   [class.active]="faq.panelOpenState" [style.border-radius]="faq.panelOpenState ? '0%' : '4px'" (closed)="faq.panelOpenState = false">
+                                <mat-expansion-panel-header [style.background]="faq.panelOpenState ? '#c2265a' : 'white'" [style.margin-bottom]="faq.panelOpenState ? '4vh' : 'auto'">
+                                        <mat-panel-title [style.color]="faq.panelOpenState ? 'white' : 'black'">
+                                                {{faq.question}}
+                                        </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <mat-panel-title class="desciption" [innerHTML]="faq.answers"></mat-panel-title>
+                        </mat-expansion-panel>
+                </div>
+        </mat-accordion>
+</div>

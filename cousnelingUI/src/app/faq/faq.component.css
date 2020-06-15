@@ -1,0 +1,36 @@
+.panel {
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    
+}
+
+.active {
+    box-shadow: -8px -8px 8px 1px rgba(20, 22, 21, 0.295);
+    color: rgb(255, 255, 255);
+    background: #2b2626;
+    font-size: x-large;
+  }
+
+.faq-set {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.viewport {
+    height: 20vh;
+    width: 800px;
+
+}
+
+.desciption {
+    color: white;
+}
+
+
+::ng-deep .snack-bar {
+    color: #ff0023;
+    background: black;
+    font-weight: bolder;
+}

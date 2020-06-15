@@ -1,0 +1,127 @@
+.body {
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  
+}
+.blur {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.icon {
+  width: fit-content;
+  background-image: url('../../assets/icons/search-24px.svg');
+  background-repeat: no-repeat;
+ 
+}
+.icon-holder {
+  background-color: #C2185B;
+  color: white;
+  border: 1px solid #C2185B;
+}
+
+.above-button {
+  height: 17vh;
+  overflow: scroll;
+}
+
+
+.above-button::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
+}
+
+
+.card {
+  width: 85%;
+  margin-bottom: 19%;
+  box-shadow: 5px 10px #300b714f;
+  border: 5px double #C2185B;
+  max-width: -moz-fit-content;
+  min-width: -moz-fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-body {
+  border-top: 1px solid #c2265a;
+}
+
+.counselors-area {
+  width: 93%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.booking-button {
+  color: white;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /* border: 3px dashed white; */
+  font-size: 81%;
+  background: #c2265a;
+}
+
+
+.actions {
+  
+  text-align: center;
+  
+}
+
+.skills {
+  height: 75px;
+}
+
+col {
+  padding: 0px 2%;
+}
+
+img{
+  height: 30vh;
+}
+
+/* Structure */
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+
+.search-bar {
+  margin-left: auto;
+  margin-right: auto;
+  width: 65%;
+  border-radius: 30px;
+  padding: 0px 3%;
+  background: white;
+  color: black;
+  border: 2px solid #ffffff;;
+}
+
+/* .input-group-text {
+  background: black;
+  color: white;
+  
+} */
+
+.search-area {
+  width: 48vw;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+}
+
+::ng-deep .snack-bar {
+  color: #ff0023;
+  background: black;
+  font-weight: bolder;
+}

@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-color: #796c6c;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    overflow: hidden;
+}
+
+.cdk-overlay-container{
+    z-index: 8;
+}   
+.font-resize {
+    font-size: 1.1vw;
+}

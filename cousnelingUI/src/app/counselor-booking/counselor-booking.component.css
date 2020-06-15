@@ -1,0 +1,40 @@
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    width: 100%;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+
+  .info {
+    margin: 7px 0px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .my-modal {
+    width: 52vw;
+    background: #ffd7e5;
+    padding: 2%;
+    box-shadow: 0px 0px 4px 4px #ffb7cf;
+  }
+
+
+
+  .dialog-actions {
+    margin-top: 3%;
+    float: right;
+  }
+
+  
+
+  ::ng-deep .snack-bar {
+    color: #ff0023;
+    background: black;
+    font-weight: bolder;
+  }
